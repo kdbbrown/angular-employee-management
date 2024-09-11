@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, inject, OnInit} from '@angular/core';
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-roles',
@@ -7,6 +8,15 @@ import { Component } from '@angular/core';
   templateUrl: './roles.component.html',
   styleUrl: './roles.component.css'
 })
-export class RolesComponent {
+export class RolesComponent implements OnInit{
 
+  http = inject(HttpClient)
+
+  ngOnInit() {
+
+  }
+
+  getAllRoles() {
+  this.http.get("http://freeapi.miniprojectideas.com/api/ClientStrive/GetAllRoles").subscribe(res:any => {})
+  }
 }
