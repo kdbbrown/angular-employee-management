@@ -1,12 +1,20 @@
-<p>roles works!</p>
 <div class="row">
-  <div class="col-3 ">
-John
-  </div>
-  <div class="col-3 ">
-Doe
-  </div>
-  <div class="col-3 ">
-B
+  <div class="col-12">
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th>Sr</th>
+        <th>Role Name</th>
+      </tr>
+      </thead>
+      <tbody>
+        @for (item of roleList; track item.roleId ; let idx = $index, e = $even , l = $last,f = $first, c = $count){
+          <tr>
+            <td>{{idx}}</td>
+            <td>{{item.role}}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
   </div>
 </div>
